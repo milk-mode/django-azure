@@ -62,12 +62,6 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}  
-      
-      - uses: azure/sql-action@v2
-        with:
-            connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-            path: './django-db.dacpac'
-            action: 'Publish'
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
